@@ -1,27 +1,23 @@
 class CommentsController < ApplicationController
     before_action :find_post
 
-    def new 
-       
-
-    end
 
     def create 
         @comment = @post.comments.create(comment_params)
-        @comment.User_id == current_user.id
+        @comment.user_id = current_user.id
         if @comment.save 
             redirect_to post_path(@post)
         else 
-            render 'new'
+            puts 'error'
         end
     end
 
     def edit 
-        @comment = @post.comments.find([:id])
+        @comment = @post.comments.find(params[:id])
     end
 
     def update 
-        @comment = @post.comments.find([:id])
+        @comment = @post.comments.find(params[:id])
         if @comment.update(comment_params)
             redirect_to @post
         else
@@ -29,7 +25,7 @@ class CommentsController < ApplicationController
         end
     end
 
-    def delete 
+    def destroy
         @comment = @post.comments.find(params[:id])
         @comment.destroy
         redirect_to @post
@@ -38,7 +34,7 @@ class CommentsController < ApplicationController
     private 
 
     def comment_params 
-        params.require(:comment).require(:text, :post_id, :user_id)
+        params.require(:comment).permit(:text)
     end
 
     def find_post

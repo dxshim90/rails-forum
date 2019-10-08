@@ -12,3 +12,11 @@
                 <%end%>
             <%end%>
         </div>
+
+
+         <h3 class="comment=selection-header">Comments:</h3>
+        <p><%= render @post.comments%> </p>
+
+        <%= render 'comments/form' %>
+
+</div>
