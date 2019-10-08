@@ -1,9 +1,16 @@
-<h1> Hello from index </h1>
+ <h1 class= Page-header>Latest Posts:</h1>
+    <% @posts.each do |post| %>
+        <div class="col-md-10 col-md-offset-1">
+             <div class="message">
+                <h3><%= link_to post.title, post_path(post), class: "message-title" %></h1>
+                <p>By: <%= post.user.email %></p>
+            </div>
+        </div>
+    <%end%>
 
-<% @posts.each do |post| %>
-<%= link_to post.title, post_path(post) %>
-<%= post.body%>
-<%end%>
 
 
-<%= link_to 'New Post', new_post_path %>
+
+
+  
+ 

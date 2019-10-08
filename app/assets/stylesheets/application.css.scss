@@ -1,16 +1,142 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.btn:hover {
+  transition: 0.5s;
+  color: #383838;
+  background-color: #fff;
+}
+
+/* Navbar styles */
+
+.navbar {
+  font-family: "Candal", sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar-default {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: lightgray;
+
+  .navbar-nav > li > a {
+    color: #222;
+  }
+
+  .navbar-link {
+    color: white;
+  }
+
+  .navbar-brand {
+    color: white;
+    letter-spacing: 1.1px;
+    font-size: 1.9em;
+  }
+}
+
+/* Links styles */
+
+.links {
+  margin-top: 20px;
+  .btn-default {
+    color: #ec6767;
+  }
+}
+
+/* Message styles */
+
+.message {
+  box-sizing: border-box;
+  background-color: #9696a9;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 1.4em 1.4em;
+  color: #fff;
+  height: 100px;
+  border-bottom: 4px solid #ec6767;
+
+  .message-title {
+    font-size: 1.2em;
+    font-family: "Asap", sans-serif;
+    font-weight: 300;
+    margin-top: 0;
+    text-color: #fff;
+    margin-bottom: 25px;
+  }
+
+  .btn-custom {
+    margin-top: 12px;
+  }
+}
+
+.message:nth-child(4n) {
+  clear: left;
+}
+
+/* Message show-page styles */
+
+.message-show {
+  box-sizing: border-box;
+  background-color: #9f9f9f;
+  border-radius: 5px;
+  padding: 2em 1.5em;
+  border-bottom: 4px solid #ec6767;
+  color: #fff;
+  font-family: "Asap", sans-serif;
+  font-weight: 300;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .message-desc {
+    font-size: 1.1em;
+    line-height: 1.75;
+    margin-bottom: 50px;
+  }
+
+  .message-posted-by {
+    color: #eee;
+    font-size: 0.9em;
+  }
+
+  .reply-to-msg {
+    margin-top: 50px;
+  }
+}
+
+/* Comment styles */
+
+.comment {
+  border-bottom: 1px solid #ec6767;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .comment-content {
+    font-size: 1.25em;
+  }
+
+  .comment-posted-by {
+    color: #eee;
+    font-size: 0.8em;
+  }
+
+  .links {
+    margin-top: 15px;
+    a {
+      color: #fff;
+      margin-right: 15px;
+    }
+  }
+}
